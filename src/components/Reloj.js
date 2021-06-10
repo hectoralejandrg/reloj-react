@@ -40,7 +40,9 @@ export const Reloj = () => {
   const handleReset = () => {
     dispatch(resetTime());
   };
-
+  const list = listLap.map((element, index)=>{
+    return <div key={index}>{element[0]}:{element[1]}:{element[2]}</div>
+  })
   return (
     <div>
       <h1>
@@ -54,6 +56,7 @@ export const Reloj = () => {
         <button onClick={() => handleReset()}>Reset</button>
         <button onClick={() => handleDecrement()}>-</button>
       </div>
+      <div>{list}</div>
     </div>
   );
 };
